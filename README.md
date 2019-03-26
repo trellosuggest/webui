@@ -5,6 +5,8 @@
    
 3. Our github organization - https://github.com/trellosuggest
 
+4. Our dropbox with diagramms and docs - https://www.dropbox.com/sh/2oyo8q9gy5lv4lo/AABhLf7PyFlChUhzDnMR05vJa?dl=0
+
 # TrelloSuggest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
