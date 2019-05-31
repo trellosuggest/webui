@@ -16,6 +16,6 @@ export class IndexComponent implements OnInit {
   }
 
   authorize() {
-    this.authService.authorize();
+    this.authService.login();
   }
 }
