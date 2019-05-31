@@ -17,7 +17,11 @@ export class AuthorizeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
-    this.authService.authorize();
+  login() {
+    this.authService.login();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

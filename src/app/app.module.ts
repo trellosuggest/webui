@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule} from '@angular/common/http';
+
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-material.module';
@@ -15,8 +18,11 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { IndexComponent } from './component/index/index.component';
 import { TokenComponent } from './component/token/token.component';
+<<<<<<< HEAD
 import { HttpClientModule} from '@angular/common/http';
 import { ComponentlistComponent } from './component/componentlist/componentlist.component';
+=======
+>>>>>>> 840ad039c950531ce0c4f6eb489bc83e7bf95e15
 
 @NgModule({
   declarations: [
@@ -40,7 +46,7 @@ import { ComponentlistComponent } from './component/componentlist/componentlist.
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CookieService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

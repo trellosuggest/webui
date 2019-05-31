@@ -1,9 +1,20 @@
 app-authorize{
-  margin-left: auto;
+  margin-left: 15px;
 }
 
 .head-text{
   cursor: pointer;
   margin-left: 15px;
   font-size: 28px;
+}
+
+.logged-as{
+  margin-left: auto;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.nickname{
+  font-weight: 300;
+  text-decoration: underline;
 }

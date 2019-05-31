@@ -21,10 +21,9 @@ export class TokenComponent implements OnInit {
 
   ngOnInit() {
     this.route.fragment.subscribe((token) => {
-      localStorage.setItem('token', (token.split('=')[1]));
-      this.backendService.postToken(localStorage.getItem('token'));
+      this.authService.setToken(token.split('=')[1]);
+      this.backendService.postToken(this.authService.getToken());
       this.trelloService.setCurrentUser();
-      this.router.navigate(['/boards']);
     });
   }
 
