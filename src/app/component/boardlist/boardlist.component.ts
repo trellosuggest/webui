@@ -14,11 +14,13 @@ export class BoardlistComponent implements OnInit {
 
   constructor(
     private backendService: BackendDataService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+
   ) { }
 
   ngOnInit() {
-    this.backendService.getBoards().subscribe(
+    this.Boards = [new Board('a', 'kek'), new Board('b', 'lel'), new Board('c', 'ebat')]; 
+    /*this.backendService.getBoards().subscribe(
       (data) => {
         this.Boards = data;
       },
@@ -26,7 +28,7 @@ export class BoardlistComponent implements OnInit {
         console.log(err);
         this.snackBar.open('Something went wrong', 'Close', { duration: 3000 });
       }
-    );
+    );*/
   }
 
 }

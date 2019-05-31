@@ -1,0 +1,5 @@
+<mat-card *ngFor="let model of models" class="ul">
+  <mat-card-title *ngFor="let prop of model.propsToPrint()" class="li">
+        {{prop}}
+  </mat-card-title>
+</mat-card>

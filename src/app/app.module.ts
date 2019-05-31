@@ -16,6 +16,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { IndexComponent } from './component/index/index.component';
 import { TokenComponent } from './component/token/token.component';
 import { HttpClientModule} from '@angular/common/http';
+import { ComponentlistComponent } from './component/componentlist/componentlist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     IndexComponent,
-    TokenComponent
+    TokenComponent,
+    ComponentlistComponent
   ],
   imports: [
     AppRoutingModule,
