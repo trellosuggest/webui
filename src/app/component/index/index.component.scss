@@ -1,0 +1,21 @@
+.link{
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
+.main-text{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: justify-all;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 50px;
+}
+
+.textholder{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 30vh;
+}
