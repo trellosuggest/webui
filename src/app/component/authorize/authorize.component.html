@@ -1,1 +1,2 @@
-<button mat-raised-button (click)="onClick()">Authorize</button>
+<button *ngIf="!this.authService.user" mat-raised-button (click)="login()">Login</button>
+<button *ngIf="!!this.authService.user" mat-raised-button (click)="logout()">Logout</button>

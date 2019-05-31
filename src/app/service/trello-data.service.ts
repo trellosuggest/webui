@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AuthorizationService} from './authorization.service';
 import {MatSnackBar} from '@angular/material';
-import {ActivatedRoute, Route} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 import {BackendDataService} from './backend-data.service';
+import {User} from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -15,19 +16,27 @@ export class TrelloDataService {
     private authService: AuthorizationService,
     private backendService: BackendDataService,
     private snackBar: MatSnackBar,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   setCurrentUser() {
-    const token = localStorage.getItem('token');
+    const token = this.authService.getToken();
     this.http.get('https://api.trello.com/1/members/me/?key=' + this.authService.apiKey + '&token=' + token)
-      .subscribe((user) => {
-        localStorage.setItem('user', JSON.stringify(user));
-      },
+      .subscribe((user: User) => {
+          this.authService.user =  user;
+          this.snackBar.open('Welcome, ' + user.fullName, 'Close', {duration: 3000});
+          this.router.navigate(['/boards']);
+        },
         (error) => {
           console.log(error);
           this.snackBar.open('Something went wrong', 'Close', {duration: 3000});
         }
     );
+  }
+
+  deleteCurrentUser() {
+    this.authService.clearToken();
+    this.authService.deleteUser();
   }
 }

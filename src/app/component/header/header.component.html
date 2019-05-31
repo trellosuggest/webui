@@ -1,4 +1,5 @@
 <mat-toolbar color="primary">
   <span (click)="redirectIndex()" class="head-text">TrelloSuggest</span>
+  <span *ngIf="this.authService.user" class="logged-as" >Logged as: <span class="nickname" >{{this.authService.user.fullName}}</span></span>
   <app-authorize></app-authorize>
 </mat-toolbar>
