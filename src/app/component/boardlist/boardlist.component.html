@@ -1,3 +1,12 @@
-<body>
-  <app-componentlist [models]="Boards"></app-componentlist>
-</body>
+<div *ngIf="!!Boards">
+  <div *ngIf="!!Boards.length" class="boardlist">
+    <div class="info">
+      <img class="fi-trello" [src]="'../../../assets/trello.png'"><span class="text">Доски</span>
+    </div>
+    <app-boardlistsingle *ngFor="let board of Boards" [board]="board"></app-boardlistsingle>
+  </div>
+
+  <div *ngIf="!Boards.length">
+    <span class="mat-error">Нет досок для работы</span>
+  </div>
+</div>

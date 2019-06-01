@@ -25,12 +25,12 @@ export class TrelloDataService {
     this.http.get('https://api.trello.com/1/members/me/?key=' + this.authService.apiKey + '&token=' + token)
       .subscribe((user: User) => {
           this.authService.user =  user;
-          this.snackBar.open('Welcome, ' + user.fullName, 'Close', {duration: 3000});
+          this.snackBar.open('Добро пожаловать, ' + user.fullName, 'Закрыть', {duration: 3000});
           this.router.navigate(['/boards']);
         },
         (error) => {
           console.log(error);
-          this.snackBar.open('Something went wrong', 'Close', {duration: 3000});
+          this.snackBar.open('Ошибка аутентификации', 'Закрыть', {duration: 3000});
         }
     );
   }

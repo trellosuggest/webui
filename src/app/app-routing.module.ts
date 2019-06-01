@@ -19,26 +19,32 @@ const routes: Routes = [
   },
   {
     path: 'boards',
-    component: BoardlistComponent, 
-    children: 
+    component: BoardlistComponent,
+    children:
     [
-      { 
-        path: ':id', 
-        redirectTo: ':id/lists', 
-        pathMatch: 'full',
-        children: 
+      {
+        path: ':id',
+        children:
         [
-          { 
-            path: 'lists', 
-            component: ListlistComponent, 
-            children: 
+          {
+            path: '',
+            redirectTo: 'lists',
+            pathMatch: 'full',
+          },
+          {
+            path: 'lists',
+            component: ListlistComponent,
+            children:
             [
               {
-                path: ':id', 
-                redirectTo: ':id/cards', 
-                pathMatch: 'full',
-                children:
+                path: ':id',
+               children:
                 [
+                  {
+                    path: '',
+                    redirectTo: 'cards',
+                    pathMatch: 'full',
+                  },
                   {
                     path: 'cards',
                     component: CardlistComponent
@@ -51,12 +57,12 @@ const routes: Routes = [
               }
             ]
           },
-          { 
-            path: 'members', 
-            component: MemberlistComponent 
+          {
+            path: 'members',
+            component: MemberlistComponent
           }
         ]
-      } 
+      }
     ]
   }
 ];

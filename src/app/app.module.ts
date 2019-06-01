@@ -18,11 +18,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { IndexComponent } from './component/index/index.component';
 import { TokenComponent } from './component/token/token.component';
-<<<<<<< HEAD
-import { HttpClientModule} from '@angular/common/http';
 import { ComponentlistComponent } from './component/componentlist/componentlist.component';
-=======
->>>>>>> 840ad039c950531ce0c4f6eb489bc83e7bf95e15
+import { BoardlistsingleComponent } from './component/boardlistsingle/boardlistsingle.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +34,8 @@ import { ComponentlistComponent } from './component/componentlist/componentlist.
     FooterComponent,
     IndexComponent,
     TokenComponent,
-    ComponentlistComponent
+    ComponentlistComponent,
+    BoardlistsingleComponent
   ],
   imports: [
     AppRoutingModule,
