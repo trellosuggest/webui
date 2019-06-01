@@ -1,0 +1,41 @@
+.cards {
+  flex-grow: 1;
+  //height: 100%;
+  overflow-y: auto;
+}
+
+.card {
+  cursor: pointer;
+}
+
+mat-card.my-style {
+  padding: 7px !important;
+
+  margin: 10px;
+
+  &:hover{
+    background: rgba(35, 35, 150, 0.1);
+  }
+
+  transition: background 4ms ease-in-out 2ms;
+  -moz-transition: background 4ms ease-in-out 2ms;
+  -o-transition:  background 4ms ease-in-out 2ms;
+  -webkit-transition: background 4ms ease-in-out 2ms;
+}
+
+
+.my-style .mat-card-subtitle {
+  margin-bottom: 10px;
+}
+
+.my-style .mat-card-title {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.my-style .mat-card-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 20%;
+}
+
