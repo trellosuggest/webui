@@ -20,19 +20,20 @@ export class TrelloDataService {
     private router: Router
   ) { }
 
-  setCurrentUser() {
+  async setCurrentUser() {
     const token = this.authService.getToken();
-    this.http.get('https://api.trello.com/1/members/me/?key=' + this.authService.apiKey + '&token=' + token)
-      .subscribe((user: User) => {
-          this.authService.user =  user;
-          this.snackBar.open('Добро пожаловать, ' + user.fullName, 'Закрыть', {duration: 3000});
-          this.router.navigate(['/boards']);
-        },
-        (error) => {
-          console.log(error);
-          this.snackBar.open('Ошибка аутентификации', 'Закрыть', {duration: 3000});
-        }
-    );
+    const user = await this.http.get(
+      'https://api.trello.com/1/members/me/?key=' + this.authService.apiKey + '&token=' + token).toPromise() as User;
+
+      // .subscribe((user: User) => {
+    this.authService.user = user;
+    this.snackBar.open('Добро пожаловать, ' + user.fullName, 'Закрыть', {duration: 3000});
+      //   },
+      //   (error) => {
+      //     console.log(error);
+      //     this.snackBar.open('Ошибка аутентификации', 'Закрыть', {duration: 3000});
+      //   }
+      // );
   }
 
   deleteCurrentUser() {

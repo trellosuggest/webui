@@ -3,6 +3,7 @@ import {AuthorizationService} from '../../service/authorization.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BackendDataService} from '../../service/backend-data.service';
 import {TrelloDataService} from '../../service/trello-data.service';
+import {__await} from 'tslib';
 
 @Component({
   selector: 'app-token',
@@ -20,10 +21,11 @@ export class TokenComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.fragment.subscribe((token) => {
+    this.route.fragment.subscribe(async (token) => {
       this.authService.setToken(token.split('=')[1]);
-      this.backendService.postToken(this.authService.getToken());
-      this.trelloService.setCurrentUser();
+      await this.trelloService.setCurrentUser();
+      await this.backendService.postToken(this.authService.getToken(), this.authService.user.id);
+      await this.router.navigate(['/boards']);
     });
   }
 

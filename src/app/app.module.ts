@@ -10,7 +10,6 @@ import { AppMaterialModule } from './app-material.module';
 import { AppComponent } from './app.component';
 import { BoardlistComponent } from './component/boardlist/boardlist.component';
 import { ListlistComponent } from './component/listlist/listlist.component';
-import { CardlistComponent } from './component/cardlist/cardlist.component';
 import { MemberlistComponent } from './component/memberlist/memberlist.component';
 import { MemberviewComponent } from './component/memberview/memberview.component';
 import { AuthorizeComponent } from './component/authorize/authorize.component';
@@ -28,7 +27,6 @@ import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsing
     AppComponent,
     BoardlistComponent,
     ListlistComponent,
-    CardlistComponent,
     MemberlistComponent,
     MemberviewComponent,
     AuthorizeComponent,

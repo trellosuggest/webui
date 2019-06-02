@@ -4,7 +4,6 @@ import { IndexComponent } from './component/index/index.component';
 import { TokenComponent } from './component/token/token.component';
 import {BoardlistComponent} from './component/boardlist/boardlist.component';
 import { ListlistComponent } from './component/listlist/listlist.component';
-import { CardlistComponent } from './component/cardlist/cardlist.component';
 import { MemberlistComponent } from './component/memberlist/memberlist.component';
 
 const routes: Routes = [
@@ -21,49 +20,49 @@ const routes: Routes = [
     path: 'boards',
     component: BoardlistComponent,
     children:
-    [
-      {
-        path: ':id',
-        children:
-        [
-          {
-            path: '',
-            redirectTo: 'lists',
-            pathMatch: 'full',
-          },
-          {
-            path: 'lists',
-            component: ListlistComponent,
-            children:
+      [
+        {
+          path: ':board_id',
+          children:
             [
               {
-                path: ':id',
-               children:
-                [
-                  {
-                    path: '',
-                    redirectTo: 'cards',
-                    pathMatch: 'full',
-                  },
-                  {
-                    path: 'cards',
-                    component: CardlistComponent
-                  },
-                  {
-                    path: 'members',
-                    component: MemberlistComponent
-                  }
-                ]
+                path: '',
+                redirectTo: 'boards/:board_id/lists',
+                pathMatch: 'full',
               }
             ]
-          },
-          {
-            path: 'members',
-            component: MemberlistComponent
-          }
-        ]
-      }
-    ]
+        }
+      ]
+  },
+  {
+    path: 'boards/:board_id/lists',
+    component: ListlistComponent,
+    // children:
+    // [
+    //   {
+    //     path: ':id',
+    //    children:
+    //     [
+    //       {
+    //         path: '',
+    //         redirectTo: 'cards',
+    //         pathMatch: 'full',
+    //       },
+    //       {
+    //         path: 'cards',
+    //         component: CardlistComponent
+    //       },
+    //       {
+    //         path: 'members',
+    //         component: MemberlistComponent
+    //       }
+    //     ]
+    //   }
+    // ]
+  },
+  {
+    path: 'members',
+    component: MemberlistComponent
   }
 ];
 
