@@ -1,0 +1,64 @@
+.card{
+  flex-grow: 1;
+}
+
+.listname{
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 16px;
+
+  max-width: 114px;
+
+  left: 25px;
+  top: 6px;
+  position: relative;
+
+  display: inline-block;
+}
+
+.list{
+  flex-grow: 1;
+  display: block;
+
+  background: #dfe1e6;
+
+  border-radius: 4px;
+
+  width: 272px;
+}
+
+.cards{
+  height: fit-content;
+}
+
+.cardholder{
+  position: relative;
+
+  border-radius: 4px;
+
+  height: 700px;
+
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.6);
+}
+
+.rearrange{
+  display: inline-block;
+
+  margin-left: auto;
+
+  position: absolute;
+  right: 0;
+}
+
+.list-header{
+  min-height: 36px;
+}

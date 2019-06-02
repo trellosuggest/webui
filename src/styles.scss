@@ -11,4 +11,26 @@ body{
 
 .text{
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #172b4d;
 }
+
+
+.fi-trello{
+  width: 20px;
+  height: 20px;
+
+  margin-right: 8px;
+}
+
+.info{
+  margin: 10px;
+  padding: 10px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+
+  background: white;
+}
+

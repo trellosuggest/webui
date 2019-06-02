@@ -1,6 +1,10 @@
-<mat-card class="outer-card">
-  <mat-card-header>
-    <mat-card-title class="my-style">{{list.name}}</mat-card-title>
-  </mat-card-header>
-  <app-cardlistsingle *ngFor="let card of this.cards" [card]="card"></app-cardlistsingle>
-</mat-card>
+<div class="list">
+  <div  class="my-style card cardholder">
+    <div class="list-header">
+      <span  class="my-style listname text">{{list.name}}</span> <button class="rearrange" mat-stroked-button>Распределить</button>
+    </div>
+    <div class="cards">
+      <app-cardlistsingle *ngFor="let card of this.cards" [card]="card"></app-cardlistsingle>
+    </div>
+  </div>
+</div>

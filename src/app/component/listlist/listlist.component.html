@@ -1,9 +1,11 @@
 <div *ngIf="!!Lists">
-  <div *ngIf="!!Lists.length" class="boardlist">
+  <div *ngIf="!!Lists.length" class="listlist">
     <div class="info">
       <img class="fi-trello" [src]="'../../../assets/trello.png'"><span class="text">Списки</span>
     </div>
-    <app-listlistsingle *ngFor="let list of Lists" [list]="list"></app-listlistsingle>
+    <div class="lists">
+      <app-listlistsingle *ngFor="let list of Lists" [list]="list"></app-listlistsingle>
+    </div>
   </div>
 
   <div *ngIf="!Lists.length">

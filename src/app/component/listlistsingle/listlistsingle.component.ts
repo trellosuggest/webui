@@ -29,6 +29,7 @@ export class ListlistsingleComponent implements OnInit {
       .subscribe(
         (cards) => {
           this.cards = cards;
+          console.log(this.cards);
         },
         (err) => {
           this.snackBar.open('Ошибка при получении карточек списка', 'Закрыть', {duration: 3000});

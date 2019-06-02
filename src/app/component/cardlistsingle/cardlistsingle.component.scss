@@ -1,6 +1,18 @@
 .card{
+  padding: 5px;
+  margin: 10px;
+
+  border-radius: 4px;
+
   background: white;
 
-
   box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+.cardname{
+  font-size: 14px;
+  font-weight: 300;
+
+  width: 100%;
+  height: 20px;
 }
