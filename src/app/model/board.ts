@@ -1,6 +1,4 @@
-import { BaseModel } from './base-model';
-
-export class Board extends BaseModel {
+export class Board {
   id: string;
   name: string;
   prefs: {
@@ -12,7 +10,6 @@ export class Board extends BaseModel {
   };
 
   constructor(id: string, name: string, URL: string) {
-    super();
     this.id = id;
     this.name = name;
     this.prefs = {
@@ -22,9 +19,5 @@ export class Board extends BaseModel {
         url: URL
       }]
     };
-  }
-
-  propsToPrint(): string[] {
-    return [this.id, this.name];
   }
 }

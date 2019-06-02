@@ -1,4 +1,4 @@
-<mat-card class="my-style card">
+<mat-card class="my-style card" [routerLink]="board.id">
   <mat-card-header>
     <img mat-card-avatar class="my-style img" [src]="board.prefs.backgroundImageScaled[0].url ? board.prefs.backgroundImageScaled[0].url :  '../../../assets/no_image.png'" />
     <mat-card-title class="my-style">{{board.name}}</mat-card-title>

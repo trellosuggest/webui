@@ -1,0 +1,6 @@
+<mat-card class="outer-card">
+  <mat-card-header>
+    <mat-card-title class="my-style">{{list.name}}</mat-card-title>
+  </mat-card-header>
+  <app-cardlistsingle *ngFor="let card of cards" [card]="card"></app-cardlistsingle>
+</mat-card>

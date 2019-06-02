@@ -20,6 +20,8 @@ import { IndexComponent } from './component/index/index.component';
 import { TokenComponent } from './component/token/token.component';
 import { ComponentlistComponent } from './component/componentlist/componentlist.component';
 import { BoardlistsingleComponent } from './component/boardlistsingle/boardlistsingle.component';
+import { ListlistsingleComponent } from './component/listlistsingle/listlistsingle.component';
+import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsingle.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { BoardlistsingleComponent } from './component/boardlistsingle/boardlists
     IndexComponent,
     TokenComponent,
     ComponentlistComponent,
-    BoardlistsingleComponent
+    BoardlistsingleComponent,
+    ListlistsingleComponent,
+    CardlistsingleComponent
   ],
   imports: [
     AppRoutingModule,
