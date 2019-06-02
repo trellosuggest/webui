@@ -5,8 +5,4 @@
     </div>
     <app-boardlistsingle *ngFor="let board of Boards" [board]="board" (click)="redirect(board.id)"></app-boardlistsingle>
   </div>
-
-  <div *ngIf="!Boards.length">
-    <span class="mat-error">Нет досок для работы</span>
-  </div>
 </div>
