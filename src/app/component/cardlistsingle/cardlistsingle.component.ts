@@ -21,11 +21,18 @@ export class CardlistsingleComponent implements OnInit {
     this.backendService.getStoryPoints(this.card.id)
       .subscribe(
         (points) => {
-          this.card.story = points.length ? (JSON.parse(points[0].value).points ? JSON.parse(points[0].value).points : 0) : 0;
+          this.card.story = points.length ? (JSON.parse(points[0].value).points ? JSON.parse(points[0].value).points : 1) : 1;
         },
-        (err) => {
-          this.snackBar.open('Не удалось получить стори поинты', 'Закрыть', {duration: 3000});
-          console.log(err);
+        () => {
+          this.backendService.getStoryPoints(this.card.id)
+            .subscribe(
+              (points) => {
+                this.card.story = points.length ? (JSON.parse(points[0].value).points ? JSON.parse(points[0].value).points : 1) : 1;
+              },
+              (err1) => {
+                this.snackBar.open('Не удалось получить стори поинты', 'Закрыть', {duration: 3000});
+                console.log(err1);
+              });
         }
       );
   }
