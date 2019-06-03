@@ -85,6 +85,14 @@ export class ListlistComponent implements OnInit {
   }
 
   rearrangeAll() {
+    this.backendService.postIgnoredLists(this.repositoryService.Lists).subscribe(
+      () => {
+        console.log('Ignored lists posted');
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
     let res: {
       fullName: string,
       cards: {

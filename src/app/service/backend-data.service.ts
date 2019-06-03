@@ -51,4 +51,8 @@ export class BackendDataService {
   rearrange(body: string) {
     return this.http.post(this.baseUrl + '/rearrange', body);
   }
+
+  postIgnoredLists(lists: List[]) {
+    return this.http.post(this.baseUrl + '/ignored', lists);
+  }
 }
