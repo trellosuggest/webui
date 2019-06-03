@@ -11,7 +11,8 @@ export class MemberDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<MemberDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public member: User) {}
+    @Inject(MAT_DIALOG_DATA) public member: User
+  ) {}
 
   close(): void {
     this.dialogRef.close();
@@ -19,7 +20,7 @@ export class MemberDialogComponent {
 
   getStorysFromMember(member: User) {
     let points = 0;
-    this.member.cards.forEach(card => {
+    member.cards.forEach(card => {
       points += card.story;
     });
     return points;

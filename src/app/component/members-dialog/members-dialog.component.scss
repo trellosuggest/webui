@@ -1,0 +1,39 @@
+.cards {
+  flex-grow: 1;
+  //height: 100%;
+  overflow-y: auto;
+}
+
+.card {
+  cursor: pointer;
+
+  margin: 15px;
+  height: 60px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+mat-card.my-style {
+  padding: 7px !important;
+}
+
+.my-style .mat-card-subtitle {
+  margin-bottom: 10px;
+}
+
+.my-style .mat-card-title {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.my-style .mat-card-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 20%;
+}
+
+.actions{
+  margin-left: auto;
+}

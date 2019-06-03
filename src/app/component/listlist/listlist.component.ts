@@ -7,6 +7,7 @@ import {User} from '../../model/user';
 import {forEach} from '@angular/router/src/utils/collection';
 import {RepositoryService} from '../../service/repository.service';
 import {MemberDialogComponent} from '../member-dialog/member-dialog.component';
+import {MembersDialogComponent} from '../members-dialog/members-dialog.component';
 
 @Component({
   selector: 'app-listlist',
@@ -71,13 +72,17 @@ export class ListlistComponent implements OnInit {
   showMemberInfo(user: User) {
     const dialogRef = this.dialog.open(MemberDialogComponent, {
       width: '250px',
+      height: '315px',
       data: user
     });
   }
 
   showAllMembersInfo() {
-
+    const dialogRef = this.dialog.open(MembersDialogComponent, {
+      width: '50%'
+    });
   }
+
   rearrangeAll() {
     // TODO Rearrange All method (non-ignored lists)
   }

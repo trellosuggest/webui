@@ -1,9 +1,9 @@
 <h1 mat-dialog-title>{{member.fullName}}</h1>
-<div mat-dialog-content>
+<div mat-dialog-content class="content">
   <img [src]="member.avatarUrl ? member.avatarUrl : '../../../assets/no_image.png'"/>
   <h3>Username: {{member.username}}</h3>
-  <span> Story points: {{getStorysFromMember(member)}} </span>
+  <span  class="story"> Story points: {{getStorysFromMember(member)}} </span>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="close()">Закрыть</button>
+  <button class="actions" mat-button (click)="close()">Закрыть</button>
 </div>
