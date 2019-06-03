@@ -12,7 +12,7 @@ import { MatSnackBarModule } from '@angular/material';
     MatSnackBarModule,
     MatCardModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
     MatCardModule,
     MatCheckboxModule
   ]
