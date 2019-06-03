@@ -51,6 +51,10 @@ import {FormsModule} from '@angular/forms';
     FormsModule
   ],
   providers: [ CookieService ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  entryComponents: [
+    MemberDialogComponent,
+    MembersDialogComponent
+  ]
 })
 export class AppModule { }

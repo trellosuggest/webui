@@ -1,17 +1,17 @@
-<div *ngIf="!!Lists">
-  <div *ngIf="!!Lists.length" class="listlist">
+<div *ngIf="!!repositoryService.Lists">
+  <div *ngIf="!!repositoryService.Lists.length" class="listlist">
     <div class="info">
       <img class="fi-trello" [src]="'../../../assets/trello.png'">
       <span class="text">Списки</span>
       <div class="members">
         <span class="divider"> | </span>
-        <button mat-button class="member" *ngIf="!!Members[0]" (click)="showMemberInfo(Members[0])">{{getInitials(Members[0])}}</button>
-        <button mat-button class="member" *ngIf="!!Members[1]" (click)="showMemberInfo(Members[1])">{{getInitials(Members[1])}}</button>
-        <button mat-button class="memberOthers member" (click)="showAllMembersInfo()">{{Members.length}}</button>
+        <button mat-button class="member" *ngIf="!!repositoryService.Members[0]" (click)="showMemberInfo(repositoryService.Members[0])">{{getInitials(repositoryService.Members[0])}}</button>
+        <button mat-button class="member" *ngIf="!!repositoryService.Members[1]" (click)="showMemberInfo(repositoryService.Members[1])">{{getInitials(repositoryService.Members[1])}}</button>
+        <button mat-button class="memberOthers member" (click)="showAllMembersInfo()">{{repositoryService.Members.length}}</button>
       </div>
     </div>
     <div class="lists">
-      <app-listlistsingle *ngFor="let list of Lists" [list]="list" [members]="Members"></app-listlistsingle>
+      <app-listlistsingle *ngFor="let list of repositoryService.Lists" [list]="list"></app-listlistsingle>
     </div>
     <button mat-raised-button color="primary" class="rearrange-all" (click)="rearrangeAll()">Распределить всю доску</button>
   </div>

@@ -18,6 +18,10 @@ export class MemberDialogComponent {
   }
 
   getStorysFromMember(member: User) {
-    // TODO
+    let points = 0;
+    this.member.cards.forEach(card => {
+      points += card.story;
+    });
+    return points;
   }
 }

@@ -26,8 +26,8 @@ export class CardlistsingleComponent implements OnInit {
         (points) => {
           this.card.story = points.length ? (JSON.parse(points[0].value).points ? JSON.parse(points[0].value).points : 1) : 1;
           this.repositoryService.Members.forEach((member) => {
-            if (!!this.repositoryService.Lists.find( (x) => this.card.id_list === x.id)           // TODO IsIgnored
-                  && !!this.card.id_members.find((x) => x === member.id)) {
+            if (!this.repositoryService.Lists.find(x => x.id === this.card.idList).isIgnored
+              && this.card.idMembers.find(x => x === member.id)) {
               member.cards.push(this.card);
             }
           });
