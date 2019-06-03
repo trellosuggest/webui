@@ -9,16 +9,13 @@ import {MemberDialogComponent} from '../member-dialog/member-dialog.component';
   templateUrl: './members-dialog.component.html',
   styleUrls: ['./members-dialog.component.scss']
 })
-export class MembersDialogComponent implements OnInit {
+export class MembersDialogComponent {
 
   constructor(
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<MembersDialogComponent>,
     private repositoryService: RepositoryService
   ) { }
-
-  ngOnInit() {
-  }
 
   close(): void {
     this.dialogRef.close();

@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Предлагаемое распределение:</h1>
+<div mat-dialog-content>
+  <div *ngFor="let user of data">
+    {{user.fullName}}:
+    <div class="card" *ngFor="let card of user.cards">
+      <span class="cardname text">
+        {{card.name}}
+      </span>
+      <div class="story text">
+        {{card.story}}
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button class="actions" mat-button (click)="close()">Закрыть</button>
+</div>

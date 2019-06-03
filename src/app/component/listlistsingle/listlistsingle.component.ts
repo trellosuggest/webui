@@ -3,10 +3,12 @@ import {List} from '../../model/list';
 import {Card} from '../../model/card';
 import {BackendDataService} from '../../service/backend-data.service';
 import {ActivatedRoute} from '@angular/router';
-import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {User} from '../../model/user';
 import {forEach} from '@angular/router/src/utils/collection';
 import {RepositoryService} from '../../service/repository.service';
+import {MembersDialogComponent} from '../members-dialog/members-dialog.component';
+import {RearrangeResultDialogComponent} from '../rearrange-result-dialog/rearrange-result-dialog.component';
 
 @Component({
   selector: 'app-listlistsingle',
@@ -20,6 +22,7 @@ export class ListlistsingleComponent implements OnInit {
   private cards: Card[];
 
   constructor(
+    public dialog: MatDialog,
     private backendService: BackendDataService,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
@@ -65,7 +68,12 @@ export class ListlistsingleComponent implements OnInit {
     });
     this.backendService.rearrange(JSON.stringify(res))
       .subscribe(
-        //TODO
+        (data) => {
+          const dialogRef = this.dialog.open(RearrangeResultDialogComponent, {
+            width: '50%',
+            data: data
+          });
+        }
       );
   }
 }

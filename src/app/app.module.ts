@@ -23,6 +23,7 @@ import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsing
 import { MemberDialogComponent } from './component/member-dialog/member-dialog.component';
 import { MembersDialogComponent } from './component/members-dialog/members-dialog.component';
 import {FormsModule} from '@angular/forms';
+import { RearrangeResultDialogComponent } from './component/rearrange-result-dialog/rearrange-result-dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FormsModule} from '@angular/forms';
     ListlistsingleComponent,
     CardlistsingleComponent,
     MemberDialogComponent,
-    MembersDialogComponent
+    MembersDialogComponent,
+    RearrangeResultDialogComponent
   ],
   imports: [
     AppRoutingModule,
