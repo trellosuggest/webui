@@ -4,7 +4,6 @@ import { IndexComponent } from './component/index/index.component';
 import { TokenComponent } from './component/token/token.component';
 import {BoardlistComponent} from './component/boardlist/boardlist.component';
 import { ListlistComponent } from './component/listlist/listlist.component';
-import { MemberlistComponent } from './component/memberlist/memberlist.component';
 
 const routes: Routes = [
   {
@@ -59,10 +58,6 @@ const routes: Routes = [
     //     ]
     //   }
     // ]
-  },
-  {
-    path: 'members',
-    component: MemberlistComponent
   }
 ];
 

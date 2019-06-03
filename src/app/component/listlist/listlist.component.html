@@ -5,13 +5,13 @@
       <span class="text">Списки</span>
       <div class="members">
         <span class="divider"> | </span>
-        <button mat-button class="member" *ngIf="!!Members[0]">{{getInitials(Members[0])}}</button>
-        <button mat-button class="member" *ngIf="!!Members[1]">{{getInitials(Members[1])}}</button>
-        <button mat-button class="memberOthers member">{{Members.length}}</button>
+        <button mat-button class="member" *ngIf="!!Members[0]" (click)="showMemberInfo(Members[0])">{{getInitials(Members[0])}}</button>
+        <button mat-button class="member" *ngIf="!!Members[1]" (click)="showMemberInfo(Members[1])">{{getInitials(Members[1])}}</button>
+        <button mat-button class="memberOthers member" (click)="showAllMembersInfo()">{{Members.length}}</button>
       </div>
     </div>
     <div class="lists">
-      <app-listlistsingle *ngFor="let list of Lists" [list]="list"></app-listlistsingle>
+      <app-listlistsingle *ngFor="let list of Lists" [list]="list" [members]="Members"></app-listlistsingle>
     </div>
     <button mat-raised-button color="primary" class="rearrange-all">Распределить всю доску</button>
   </div>

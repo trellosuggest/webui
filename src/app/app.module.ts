@@ -10,7 +10,6 @@ import { AppMaterialModule } from './app-material.module';
 import { AppComponent } from './app.component';
 import { BoardlistComponent } from './component/boardlist/boardlist.component';
 import { ListlistComponent } from './component/listlist/listlist.component';
-import { MemberlistComponent } from './component/memberlist/memberlist.component';
 import { MemberviewComponent } from './component/memberview/memberview.component';
 import { AuthorizeComponent } from './component/authorize/authorize.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -21,13 +20,14 @@ import { ComponentlistComponent } from './component/componentlist/componentlist.
 import { BoardlistsingleComponent } from './component/boardlistsingle/boardlistsingle.component';
 import { ListlistsingleComponent } from './component/listlistsingle/listlistsingle.component';
 import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsingle.component';
+import { MemberDialogComponent } from './component/member-dialog/member-dialog.component';
+import { MembersDialogComponent } from './component/members-dialog/members-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardlistComponent,
     ListlistComponent,
-    MemberlistComponent,
     MemberviewComponent,
     AuthorizeComponent,
     HeaderComponent,
@@ -37,7 +37,9 @@ import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsing
     ComponentlistComponent,
     BoardlistsingleComponent,
     ListlistsingleComponent,
-    CardlistsingleComponent
+    CardlistsingleComponent,
+    MemberDialogComponent,
+    MembersDialogComponent
   ],
   imports: [
     AppRoutingModule,

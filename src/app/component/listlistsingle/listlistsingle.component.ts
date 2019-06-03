@@ -4,6 +4,7 @@ import {Card} from '../../model/card';
 import {BackendDataService} from '../../service/backend-data.service';
 import {ActivatedRoute} from '@angular/router';
 import {MatSnackBar} from '@angular/material';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-listlistsingle',

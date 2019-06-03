@@ -1,3 +1,5 @@
+import {Card} from './card';
+
 export interface User {
   id: string;
   avatarUrl: string;
@@ -5,4 +7,6 @@ export interface User {
   username: string;
   url: string;
   roles: any[];
+
+  cards: Card[];
 }
