@@ -38,4 +38,8 @@ export class BackendDataService {
   getCards(listId: string) {
     return this.http.get<Card[]>(this.baseUrl + '/lists/' + listId + '/cards');
   }
+
+  getStoryPoints(cardId: string) {
+    return this.http.get<any>(this.baseUrl + '/cards/' + cardId + '/storyPoints');
+  }
 }
