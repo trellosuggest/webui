@@ -47,4 +47,8 @@ export class BackendDataService {
   getMembers(boardId: string) {
     return this.http.get<User[]>(this.baseUrl + '/boards/' + boardId + '/members');
   }
+
+  rearrange(body: string) {
+    return this.http.post(this.baseUrl + '/rearrange', body);
+  }
 }

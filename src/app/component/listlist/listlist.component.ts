@@ -103,6 +103,9 @@ export class ListlistComponent implements OnInit {
       });
       i++;
     });
-    return JSON.stringify(res);
+    this.backendService.rearrange(JSON.stringify(res))
+      .subscribe(
+        //TODO
+      );
   }
 }
