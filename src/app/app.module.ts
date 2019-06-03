@@ -22,6 +22,7 @@ import { ListlistsingleComponent } from './component/listlistsingle/listlistsing
 import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsingle.component';
 import { MemberDialogComponent } from './component/member-dialog/member-dialog.component';
 import { MembersDialogComponent } from './component/members-dialog/members-dialog.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MembersDialogComponent } from './component/members-dialog/members-dialo
     AppMaterialModule,
     BrowserAnimationsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ CookieService ],
   bootstrap: [ AppComponent ]

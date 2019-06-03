@@ -38,4 +38,7 @@ export class ListlistsingleComponent implements OnInit {
       );
   }
 
+  rearrangeList(listId: string) {
+    // TODO Rearrange 1 list.
+  }
 }

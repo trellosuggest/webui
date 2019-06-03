@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import {MatToolbarModule, MatCardModule, MatDialogModule, MatInputModule} from '@angular/material';
+import { MatDialogModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatCardModule, MatCheckboxModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatSnackBarModule } from '@angular/material';
 
@@ -12,6 +13,8 @@ import { MatSnackBarModule } from '@angular/material';
     MatCardModule,
     MatDialogModule,
     MatInputModule
+    MatCardModule,
+    MatCheckboxModule
   ]
 })
 export class AppMaterialModule { }

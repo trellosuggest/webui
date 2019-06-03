@@ -71,4 +71,7 @@ export class ListlistComponent implements OnInit {
   showAllMembersInfo() {
 
   }
+  rearrangeAll() {
+    // TODO Rearrange All method (non-ignored lists)
+  }
 }
