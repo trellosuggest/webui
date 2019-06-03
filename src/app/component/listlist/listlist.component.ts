@@ -84,6 +84,25 @@ export class ListlistComponent implements OnInit {
   }
 
   rearrangeAll() {
-    // TODO Rearrange All method (non-ignored lists)
+    let res: {
+      fullName: string,
+      cards: {
+        name: string,
+        story: number
+      }[];
+    }[] = [];
+    let i = 0;
+    this.repositoryService.Members.forEach((member) => {
+      res.push(
+        {
+          fullName: member.fullName,
+          cards: []
+        });
+      member.cards.forEach((card) => {
+        res[i].cards.push({name: card.name, story: card.story});
+      });
+      i++;
+    });
+    return JSON.stringify(res);
   }
 }

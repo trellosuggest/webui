@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {MatSnackBar} from '@angular/material';
 import {User} from '../../model/user';
 import {forEach} from '@angular/router/src/utils/collection';
+import {RepositoryService} from '../../service/repository.service';
 
 @Component({
   selector: 'app-listlistsingle',
@@ -21,7 +22,8 @@ export class ListlistsingleComponent implements OnInit {
   constructor(
     private backendService: BackendDataService,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private repositoryService: RepositoryService
   ) {
     this.cards = [];
   }
@@ -40,6 +42,27 @@ export class ListlistsingleComponent implements OnInit {
   }
 
   rearrangeList(listId: string) {
-    // TODO Rearrange 1 list.
+    let res: {
+      fullName: string,
+      cards: {
+        name: string,
+        story: number
+      }[];
+    }[] = [];
+    let i = 0;
+    this.repositoryService.Members.forEach((member) => {
+      res.push(
+        {
+          fullName: member.fullName,
+          cards: []
+        });
+      member.cards.forEach((card) => {
+        if(card.idList === this.list.id) {
+          res[i].cards.push({name: card.name, story: card.story});
+        }
+      });
+      i++;
+    });
+    return JSON.stringify(res);
   }
 }
