@@ -4,6 +4,7 @@ import {Board} from '../model/board';
 import {Observable} from 'rxjs';
 import {List} from '../model/list';
 import {Card} from '../model/card';
+import {User} from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,9 @@ export class BackendDataService {
 
   getStoryPoints(cardId: string) {
     return this.http.get<any>(this.baseUrl + '/cards/' + cardId + '/storyPoints');
+  }
+
+  getMembers(boardId: string) {
+    return this.http.get<User[]>(this.baseUrl + '/boards/' + boardId + '/members');
   }
 }

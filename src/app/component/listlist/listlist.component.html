@@ -1,7 +1,14 @@
 <div *ngIf="!!Lists">
   <div *ngIf="!!Lists.length" class="listlist">
     <div class="info">
-      <img class="fi-trello" [src]="'../../../assets/trello.png'"><span class="text">Списки</span>
+      <img class="fi-trello" [src]="'../../../assets/trello.png'">
+      <span class="text">Списки</span>
+      <div class="members">
+        <span class="divider"> | </span>
+        <button mat-button class="member" *ngIf="!!Members[0]">{{getInitials(Members[0])}}</button>
+        <button mat-button class="member" *ngIf="!!Members[1]">{{getInitials(Members[1])}}</button>
+        <button mat-button class="memberOthers member">{{Members.length}}</button>
+      </div>
     </div>
     <div class="lists">
       <app-listlistsingle *ngFor="let list of Lists" [list]="list"></app-listlistsingle>

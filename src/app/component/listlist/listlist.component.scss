@@ -41,3 +41,37 @@ app-listlistsingle{
   right: 25px;
   margin-top: 5px;
 }
+
+.members{
+  margin-left: auto;
+  display: inline-block;
+}
+
+.member{
+  height: 30px;
+  width: 46px;
+  min-width: 1px;
+
+  border-radius: 100px;
+
+  background: #dfe1e6;
+
+  line-height: 32px;
+
+  color: #172b4d;
+}
+
+.memberOthers{
+  background: rgba(0, 0, 0, 0.2);
+
+  color: white;
+
+  text-align: center;
+}
+
+.divider{
+  font-weight: 600;
+
+  font-size: 32px;
+  line-height: 24px;
+}
