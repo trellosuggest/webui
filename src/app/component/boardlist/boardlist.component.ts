@@ -33,21 +33,18 @@ export class BoardlistComponent implements OnInit {
         (boards) => {
           this.Boards = boards;
         },
-        (err) => {
-          this.snackBar.open('При получении досок возникла ошибка', 'Закрыть', {duration: 3000});
-          console.log(err);
-        }
-      );
-    /*this.backendService.getBoards().subscribe(
-      (data) => {
-        this.Boards = data;
-      },
-    (err) => {
-        console.log(err);
-        this.snackBar.open('Не удалось получить список досок', 'Закрыть', { duration: 3000 });
-      }
-    );*/
-  }
+        () => {
+          this.backendService.getBoards()
+            .subscribe(
+              (boards) => {
+                this.Boards = boards;
+              },
+              (err1) => {
+                this.snackBar.open('При получении досок возникла ошибка', 'Закрыть', {duration: 3000});
+                console.log(err1);
+              });
+        });
+    }
 
   redirect(boardId: string) {
     this.router.navigate([ 'boards/' + boardId + '/lists' ]);
