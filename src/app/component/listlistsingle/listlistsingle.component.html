@@ -1,7 +1,8 @@
 <div class="list">
   <div  class="my-style card cardholder">
     <div class="list-header">
-      <span  class="my-style listname text">{{list.name}}</span> <button class="rearrange" mat-stroked-button>Распределить</button>
+      <span  class="my-style listname text">{{list.name}}</span> <button class="rearrange" mat-stroked-button (click)="rearrangeList(list.id)">Распределить</button>
+      <mat-checkbox [(ngModel)]="list.isIgnored" class="ignoreCheck">Игнорировать список</mat-checkbox>
     </div>
     <div class="cards">
       <app-cardlistsingle *ngFor="let card of this.cards" [card]="card"></app-cardlistsingle>

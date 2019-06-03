@@ -45,4 +45,7 @@ export class ListlistComponent implements OnInit {
       );
   }
 
+  rearrangeAll() {
+    // TODO Rearrange All method (non-ignored lists)
+  }
 }

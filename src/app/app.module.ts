@@ -21,6 +21,7 @@ import { ComponentlistComponent } from './component/componentlist/componentlist.
 import { BoardlistsingleComponent } from './component/boardlistsingle/boardlistsingle.component';
 import { ListlistsingleComponent } from './component/listlistsingle/listlistsingle.component';
 import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsingle.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CardlistsingleComponent } from './component/cardlistsingle/cardlistsing
     AppMaterialModule,
     BrowserAnimationsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ CookieService ],
   bootstrap: [ AppComponent ]
