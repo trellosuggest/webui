@@ -3,6 +3,9 @@
   <img [src]="member.avatarUrl ? member.avatarUrl : '../../../assets/no_image.png'"/>
   <h3>Username: {{member.username}}</h3>
   <span  class="story"> Story points: {{getStorysFromMember(member)}} </span>
+  <div class="cards">
+    <app-cardlistsingle *ngFor="let card of member.cards" [card]="card"></app-cardlistsingle>
+  </div>
 </div>
 <div mat-dialog-actions>
   <button class="actions" mat-button (click)="close()">Закрыть</button>

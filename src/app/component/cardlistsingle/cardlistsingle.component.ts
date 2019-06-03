@@ -28,7 +28,9 @@ export class CardlistsingleComponent implements OnInit {
           this.repositoryService.Members.forEach((member) => {
             if (!this.repositoryService.Lists.find(x => x.id === this.card.idList).isIgnored
               && this.card.idMembers.find(x => x === member.id)) {
-              member.cards.push(this.card);
+              if (!member.cards.includes(this.card)) {
+                member.cards.push(this.card);
+              }
             }
           });
         },

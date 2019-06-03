@@ -34,7 +34,8 @@ export class MembersDialogComponent implements OnInit {
 
   showMemberInfo(user: User) {
     const dialogRef = this.dialog.open(MemberDialogComponent, {
-      width: '250px',
+      width: '40%',
+      height: '35%',
       data: user
     });
   }
